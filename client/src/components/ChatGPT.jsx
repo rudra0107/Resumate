@@ -8,9 +8,8 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
-import axios from "axios";
 
-const api_key = "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";
+const api_key = process.env.CHATGPTAPI;
 
 function App() {
   const [messages, setMessages] = useState([
@@ -51,23 +50,6 @@ function App() {
       role: "system",
       content: "Explain all concepts like I am 10 years old",
     };
-
-    // await axios
-    //   .post("https://api.openai.com/v1/chat/completions", {
-    //     headers: {
-    //       "Authorization": `Bearer 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`,
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({
-    //       "model": "gpt-3.5-turbo",
-    //       "messages": [systemMessage, ...apiMessage],
-    //       "temperature": 0.7,
-    //     }),
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err)=>{console.log(err)});
 
     const apiRequestBody = {
       model: "gpt-3.5-turbo",
